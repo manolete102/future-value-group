@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Future Value Group — Consultora especializada en diseño web, marketing digital, análisis de datos y soluciones financieras para empresas que buscan crecer con tecnología.">
+    <meta name="keywords" content="Future Value Group, diseño web, marketing digital, análisis de datos, finanzas, consultora, tecnología">
+    <meta name="author" content="Future Value Group">
+
+    <title>Future Value Group | Consultora Digital y Financiera</title>
+
+    <!-- Open Graph / WhatsApp / LinkedIn -->
+    <meta property="og:title" content="Future Value Group | Consultora Digital y Financiera">
+    <meta property="og:description" content="Diseño web, marketing digital, análisis de datos y finanzas para empresas que buscan el futuro.">
+    <meta property="og:image" content="https://futurevalue.group/assets/logo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://futurevalue.group">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/assets/logo.jpeg" />
+
+    <!-- Estilos -->
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #0b1b2b;
+        background-color: #f9f9f9;
+        line-height: 1.6;
+      }
+
+      header {
+        background: #0b1b2b;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 3rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      header img {
+        height: 60px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        transition: 0.2s;
+      }
+
+      nav a:hover {
+        color: #ffc107;
+      }
+
+      .hero {
+        background: linear-gradient(to right, #0b1b2b, #112e47);
+        color: #fff;
+        text-align: center;
+        padding: 6rem 2rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .hero button {
+        background: #ffc107;
+        border: none;
+        color: #0b1b2b;
+        font-weight: bold;
+        padding: 0.9rem 2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .hero button:hover {
+        background: #ffcf40;
+      }
+
+      .services {
+        padding: 5rem 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .services h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        color: #0b1b2b;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .service {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        transition: 0.3s;
+      }
+
+      .service:hover {
+        transform: translateY(-5px);
+      }
+
+      .service h3 {
+        color: #0b1b2b;
+        margin-bottom: 1rem;
+      }
+
+      footer {
+        background: #0b1b2b;
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 4rem;
+      }
+
+      footer p {
+        opacity: 0.8;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="/assets/logo.jpeg" alt="Logo Future Value Group">
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Impulsamos el valor del futuro</h1>
+      <p>Future Value Group es una consultora que combina estrategia financiera, diseño web, marketing digital y ciencia de datos para potenciar el crecimiento de empresas innovadoras.</p>
+      <button onclick="document.querySelector('#contacto').scrollIntoView({behavior:'smooth'})">Contáctanos</button>
+    </section>
+
+    <section id="servicios" class="services">
+      <h2>Servicios Principales</h2>
+      <div class="service-grid">
+        <div class="service">
+          <h3>💻 Diseño Web</h3>
+          <p>Diseñamos sitios modernos, funcionales y optimizados para impulsar tu marca en línea.</p>
+        </div>
+        <div class="service">
+          <h3>📊 Ciencia y Análisis de Datos</h3>
+          <p>Convertimos datos en decisiones inteligentes mediante analítica avanzada y visualización.</p>
+        </div>
+        <div class="service">
+          <h3>📈 Marketing Digital</h3>
+          <p>Posicionamos tu empresa con estrategias SEO, redes sociales y campañas efectivas.</p>
+        </div>
+        <div class="service">
+          <h3>💰 Asesoría Financiera</h3>
+          <p>Optimizamos la gestión de tus recursos y proyecciones económicas para el éxito sostenible.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contacto">
+      <p>© 2025 Future Value Group · Todos los derechos reservados</p>
+      <p><a href="mailto:contact@futurevalue.group" style="color:#ffc107; text-decoration:none;">contact@futurevalue.group</a></p>
+    </footer>
+  </body>
+</html>
