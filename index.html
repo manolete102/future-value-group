@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Future Value Group — Finanzas, Web & Data</title>
+  <meta name="description" content="Consultora integral: finanzas corporativas, diseño web, marketing digital, bases de datos y ciencia de datos. Hacemos que tu empresa valga más." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Future Value Group" />
+  <meta property="og:description" content="Finanzas + Web + Data para hacer crecer tu negocio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:locale" content="es_MX" />
+  <link rel="icon" href="/assets/logo.jpeg" type="image/jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e1a2b;
+      --card:#111a2d;
+      --text:#f5f7fa;
+      --muted:#b8c2cf;
+      --brand:#b4985c;
+      --brand-2:#e5d2a3;
+      --line:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{filter:brightness(1.15)}
+    .wrap{max-width:1120px;margin:0 auto;padding:22px}
+    header{position:sticky;top:0;z-index:50;background:rgba(14,26,43,.7);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo img{height:44px;width:auto;border-radius:4px}
+    .spacer{flex:1}
+    .nav-links a{margin-left:8px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);color:var(--text)}
+    .nav-links a.cta{border:none;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#111;font-weight:800}
+    .menu{display:none}
+
+    .hero{padding:56px 0 24px;text-align:left}
+    .hero h1{font-family:'Playfair Display',Georgia,Times,serif;font-weight:700;font-size:clamp(28px,5vw,54px);line-height:1.1;margin:10px 0 12px}
+    .hero p{color:var(--muted);max-width:760px}
+    .gold-line{height:2px;background:var(--brand);width:120px;margin:16px 0;border-radius:2px}
+    .kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .kpi{padding:10px 12px;border:1px dashed var(--line);border-radius:12px;color:var(--muted)}
+
+    section{padding:34px 0}
+    h2.section-title{font-size:24px;margin:0 0 8px;font-weight:800}
+    .cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:linear-gradient(180deg,#0f1726,#0c1422);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .card h3{font-family:'Playfair Display',Georgia,Times,serif;margin:.2rem 0}
+    .card p{color:var(--muted)}
+
+    .process{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .step{background:#0f1524;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .badge{display:inline-block;background:var(--brand);color:#111;padding:4px 10px;border-radius:999px;font-weight:800;font-size:12px}
+
+    .cases{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .case{background:#0f1524;border:1px solid var(--line);border-radius:14px;padding:16px}
+    .case small{color:var(--muted)}
+
+    form{display:grid;gap:10px}
+    label{font-weight:600}
+    input,textarea{background:#0f1524;border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:12px}
+    button{cursor:pointer}
+
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid var(--line);margin-top:24px}
+
+    @media (max-width:860px){
+      .nav-links{display:none}
+      .menu{display:inline-block;border:1px solid var(--line);background:transparent;color:var(--text);padding:8px 12px;border-radius:10px}
+      nav[aria-expanded="true"] .nav-links{display:grid;gap:8px;position:absolute;left:22px;right:22px;top:64px;background:#0f1524;border:1px solid var(--line);border-radius:12px;padding:10px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Principal" aria-expanded="false" id="nav">
+      <a class="logo" href="#top" aria-label="Future Value Group">
+        <img src="/assets/logo.jpeg" alt="Logo Future Value Group" />
+        <span>Future Value Group</span>
+      </a>
+      <div class="spacer"></div>
+      <div class="nav-links">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto" class="cta">Contáctanos</a>
+      </div>
+      <button class="menu" aria-label="Abrir menú" onclick="toggleNav()">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="gold-line" aria-hidden="true"></div>
+      <h1>Finanzas, Web y Datos para crear <em>valor futuro</em></h1>
+      <p>Somos una consultora que integra <strong>finanzas corporativas</strong>, <strong>diseño y desarrollo web</strong>, <strong>marketing digital</strong> y <strong>ciencia de datos</strong>. Combinamos estrategia y ejecución para acelerar resultados medibles.</p>
+      <div class="kpis" role="list">
+        <div class="kpi">⚡ Core Web Vitals</div>
+        <div class="kpi">🎯 Growth & Performance</div>
+        <div class="kpi">📊 BI & Analytics</div>
+        <div class="kpi">💼 Modelos financieros</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="wrap">
+      <h2 class="section-title">Nosotros</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Visión</h3>
+          <p>Convertimos datos, diseño y finanzas en decisiones simples que generan impacto y crecimiento sostenible.</p>
+        </article>
+        <article class="card">
+          <h3>Qué nos diferencia</h3>
+          <p>Equipo multidisciplinario, foco en métricas y ejecución ágil. Entregamos rápido y medimos mejor.</p>
+        </article>
+        <article class="card">
+          <h3>Ámbitos</h3>
+          <p>PyMEs, e-commerce, servicios, manufactura y startups en etapas tempranas y de escalamiento.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <h2 class="section-title">Servicios</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Finanzas corporativas</h3>
+          <p>Proyecciones, valuación, flujo de caja, presupuestos, pricing y tableros financieros (FP&A).</p>
+          <ul>
+            <li>Modelos ROI / Payback</li>
+            <li>Dashboards ejecutivos</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Web & Marketing digital</h3>
+          <p>Landings, sitios, SEO/SEM, pauta, funnels y optimización de conversión (CRO).</p>
+          <ul>
+            <li>E-commerce y sitios estáticos</li>
+            <li>Email marketing y automatizaciones</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Datos & BI</h3>
+          <p>ETL, modelado relacional, analítica de negocio y visualización en Power BI / Looker / Metabase.</p>
+          <ul>
+            <li>Pipelines y calidad de datos</li>
+            <li>Indicadores en tiempo real</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <div class="wrap">
+      <h2 class="section-title">Proceso</h2>
+      <div class="process">
+        <div class="step"><span class="badge">1</span> Descubrimiento: objetivos, KPIs y alcance.</div>
+        <div class="step"><span class="badge">2</span> Diseño & plan: arquitectura, wireframes y backlog.</div>
+        <div class="step"><span class="badge">3</span> Ejecución ágil: sprints, QA y experimentación.</div>
+        <div class="step"><span class="badge">4</span> Medición: dashboards y mejora continua.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <h2 class="section-title">Contacto</h2>
+      <p style="color:var(--muted)">Escribinos y te respondemos en 24 h hábiles.</p>
+      <form action="https://formspree.io/f/mblpnoeo" method="POST">
+        <label for="name">Nombre</label>
+        <input id="name" name="name" placeholder="Tu nombre" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+        <label for="msg">Proyecto / Mensaje</label>
+        <textarea id="msg" name="message" rows="5" placeholder="Contanos de tu proyecto…" required></textarea>
+        <input type="hidden" name="_subject" value="Nuevo contacto — Future Value Group">
+        <button type="submit" style="border:none;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#111;font-weight:800;padding:12px 16px;border-radius:12px">Enviar</button>
+      </form>
+      <p style="margin-top:10px;color:var(--muted)">También por WhatsApp o agenda una reunión (sumamos links cuando nos pases los datos).</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Future Value Group — Finanzas • Web • Data</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function toggleNav(){
+    const nav=document.getElementById('nav');
+    const expanded=nav.getAttribute('aria-expanded')==='true';
+    nav.setAttribute('aria-expanded', !expanded);
+  }
+</script>
+</body>
+</html>
