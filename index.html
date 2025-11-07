@@ -1,87 +1,211 @@
-<!DOCTYPE html><html lang="es"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Future Value Group — Finanzas, Web & Datos</title>
-<meta name="description" content="Consultora premium: finanzas corporativas, diseño web, marketing digital, bases de datos y ciencia de datos. Impulsamos valor con tecnología.">
-<link rel="icon" href="/assets/logo.jpeg">
-<meta property="og:title" content="Future Value Group — Finanzas, Web & Datos">
-<meta property="og:description" content="Estrategia + ejecución para crecer con datos, diseño y finanzas.">
-<meta property="og:image" content="https://futurevalue.group/assets/logo.jpeg"><meta property="og:type" content="website">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/main.css">
-</head><body>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Future Value Group — Diseño Web, Finanzas & Data</title>
+  <meta name="description" content="Creamos experiencias digitales y modelos de negocio que impulsan ventas y ROI. Diseño web, branding, marketing, finanzas y analítica.">
+  <link rel="icon" href="/assets/logo.jpeg">
+  <!-- Tipografías sobrias/modernas -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
 
-<header>
-  <div class="wrap">
-    <nav>
-      <a class="logo" href="/"><img src="/assets/logo.jpeg" alt="FV" /><strong style="color:#fff">Future Value Group</strong></a>
-      <div class="spacer"></div>
-      <a href="/servicios.html">Servicios</a>
-      <a href="/casos.html">Casos</a>
-      <a href="/nosotros.html">Nosotros</a>
-      <a href="/contacto.html" class="cta">Contacto</a>
+<!-- NAV -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <img src="/assets/logo.jpeg" alt="Future Value Group" />
+      <span>Future Value Group</span>
+    </a>
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#branding">Branding</a>
+      <a href="#web">Desarrollo Web</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto" class="cta">Cotiza tu proyecto</a>
     </nav>
+    <button class="hamb" aria-label="Menú" onclick="toggleMenu()">☰</button>
   </div>
+  <div class="divider"></div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="badge">Consultora integral</span>
-    <h1>Impulsamos el valor del futuro</h1>
-    <p class="sub">Combinamos <strong>finanzas corporativas</strong>, <strong>diseño y desarrollo web</strong>, <strong>marketing digital</strong> y <strong>ciencia de datos</strong> para entregar resultados medibles, rápido.</p>
-    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-      <a class="btn" href="/contacto.html">Solicitar propuesta</a>
-      <a class="btn outline" href="/casos.html">Ver casos</a>
-    </div>
-    <div class="kpis">
-      <div class="kpi">⚡ Core Web Vitals</div>
-      <div class="kpi">📊 BI & Analytics</div>
-      <div class="kpi">💼 FP&A</div>
-      <div class="kpi">🎯 Growth</div>
-    </div>
-  </div>
-</section>
+<main id="inicio">
 
-<section class="section">
-  <div class="wrap">
-    <h2 class="section-title">Qué hacemos</h2>
-    <div class="grid cards">
-      <article class="card">
-        <h3>Finanzas corporativas</h3>
-        <p>Modelos financieros, flujo de caja, pricing, presupuestos y tableros ejecutivos (FP&A).</p>
-        <ul class="list">
-          <li>Valuación & ROI / Payback</li><li>Presupuestos y escenarios</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Web & Marketing digital</h3>
-        <p>Landings, sitios, SEO/SEM, funnels y CRO para convertir tráfico en ventas.</p>
-        <ul class="list"><li>E-commerce y sitios corporativos</li><li>Automatizaciones y e-mail</li></ul>
-      </article>
-      <article class="card">
-        <h3>Datos & BI</h3>
-        <p>ETL, modelado, analítica y visualización (Power BI / Looker / Metabase).</p>
-        <ul class="list"><li>Calidad y gobernanza de datos</li><li>Indicadores en tiempo real</li></ul>
-      </article>
+  <!-- SECCIÓN / Título de la página (breadcrumb simple) -->
+  <section class="page-lead">
+    <div class="wrap">
+      <span class="overline">DESARROLLO WEB</span>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" style="padding-top:0">
-  <div class="wrap">
-    <h2 class="section-title">Proceso</h2>
-    <div class="grid cards">
-      <div class="card"><strong>1 · Descubrimiento</strong><p>Objetivos, KPIs, alcance.</p></div>
-      <div class="card"><strong>2 · Plan</strong><p>Arquitectura, backlog y roadmap.</p></div>
-      <div class="card"><strong>3 · Ejecución</strong><p>Sprints, QA y experimentos.</p></div>
-      <div class="card"><strong>4 · Medición</strong><p>Dashboards y mejora continua.</p></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>No solo diseñamos páginas web:<br><span class="thin">Creamos experiencias digitales que impulsan tu negocio.</span></h1>
+      <p class="sub">Transformamos tu negocio con diseño y desarrollo profesional, performance, SEO y analítica.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
+  <!-- OFRECEMOS -->
+  <section class="offers">
+    <div class="wrap">
+      <h2 class="sr-only">Ofrecemos</h2>
+      <div class="cols3">
+        <article>
+          <div class="dot"></div>
+          <h3>Visibilidad</h3>
+          <p>SEO técnico y de contenidos para que te encuentren clientes que aún no te conocen.</p>
+        </article>
+        <article>
+          <div class="dot"></div>
+          <h3>Aumento de ventas</h3>
+          <p>Diseño orientado a conversión (CRO), velocidad, funnels y analítica accionable.</p>
+        </article>
+        <article>
+          <div class="dot"></div>
+          <h3>Retorno de inversión</h3>
+          <p>Ruta clara: research → UX/UI → desarrollo → lanzamiento → optimización continua.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS / PILARES -->
+  <section id="web" class="services">
+    <div class="wrap">
+      <div class="grid">
+        <div class="left">
+          <span class="index">01</span>
+          <h2>Diseño y desarrollo de sitios web</h2>
+          <ul class="bullets">
+            <li>UX/UI con foco en usuario y negocio</li>
+            <li>Código moderno, accesible y veloz (Core Web Vitals)</li>
+            <li>SEO técnico y on-page desde el día 1</li>
+          </ul>
+        </div>
+        <div class="right">
+          <span class="blue-dot"></span>
+          <h3 class="pillars-title">Los pilares de un sitio web</h3>
+
+          <button class="accordion">UX/UI orientado a resultados</button>
+          <div class="panel"><p>Arquitectura, wireframes, diseño visual y micro-interacciones medibles.</p></div>
+
+          <button class="accordion">Contenido & Copywriting</button>
+          <div class="panel"><p>Mensajes claros, propuesta de valor y CTAs que convierten.</p></div>
+
+          <button class="accordion">Desarrollo front-end</button>
+          <div class="panel"><p>HTML/CSS/JS limpio, accesibilidad y performance de clase A.</p></div>
+
+          <button class="accordion">SEO técnico</button>
+          <div class="panel"><p>Etiquetas, estructura, velocidad, sitemaps y schema listos para Google.</p></div>
+        </div>
+      </div>
+
+      <div class="divider large"></div>
+
+      <div class="grid">
+        <div class="left">
+          <span class="index">02</span>
+          <h2>Mantenimiento y evolución</h2>
+          <p>Actualizaciones, seguridad, contenido y mejoras de conversión de forma continua.</p>
+        </div>
+        <div class="right">
+          <ul class="bullets">
+            <li>Monitoreo de uptime y performance</li>
+            <li>Iteraciones de CRO, A/B testing</li>
+            <li>Roadmap de mejoras trimestral</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODOLOGÍA / CARRUSEL -->
+  <section class="process">
+    <div class="wrap">
+      <h2>Nuestro proceso orientado a resultados</h2>
+      <p class="sub">Comunicación clara, fechas cerradas y entregables medibles.</p>
+
+      <div class="carousel" id="steps">
+        <button class="nav prev" aria-label="Anterior" onclick="slide(-1)">←</button>
+        <div class="track">
+          <article class="card">
+            <span class="step">01 — 07</span>
+            <h3>Analizamos</h3>
+            <p>Objetivos, alcance, audiencia y benchmarks. Definimos KPIs y riesgos.</p>
+          </article>
+          <article class="card">
+            <span class="step">02 — 07</span>
+            <h3>Planeamos</h3>
+            <p>Arquitectura, backlog, sprints y diseño de medición (GA4/Pixel).</p>
+          </article>
+          <article class="card">
+            <span class="step">03 — 07</span>
+            <h3>Diseñamos</h3>
+            <p>Wireframes, UI, componentes y prototipo navegable.</p>
+          </article>
+          <article class="card">
+            <span class="step">04 — 07</span>
+            <h3>Construimos</h3>
+            <p>Front-end limpio, accesible y veloz. Integraciones y QA técnico.</p>
+          </article>
+          <article class="card">
+            <span class="step">05 — 07</span>
+            <h3>Probamos</h3>
+            <p>Pruebas funcionales, responsive, performance y SEO.</p>
+          </article>
+          <article class="card">
+            <span class="step">06 — 07</span>
+            <h3>Lanzamos</h3>
+            <p>Despliegue, SSL/HTTPS, dominios y checklist final.</p>
+          </article>
+          <article class="card">
+            <span class="step">07 — 07</span>
+            <h3>Medimos & Mejoramos</h3>
+            <p>Dashboards, insights y experimentación continua.</p>
+          </article>
+        </div>
+        <button class="nav next" aria-label="Siguiente" onclick="slide(1)">→</button>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn" href="#contacto">Ver flujo completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <div class="grid2">
+        <div>
+          <h2>¿Listos para empezar?</h2>
+          <p class="sub">Contanos tu proyecto y te devolvemos una propuesta en 24 h hábiles.</p>
+        </div>
+        <form class="card form" action="https://formspree.io/f/mblpnoeo" method="POST">
+          <label>Nombre<input name="name" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Proyecto / Mensaje<textarea rows="5" name="message" required></textarea></label>
+          <input type="hidden" name="_subject" value="Nuevo contacto — Future Value Group">
+          <button class="btn" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="divider"></div>
   <div class="wrap">
-    © <span id="y"></span> Future Value Group — Finanzas • Web • Data · <a href="/contacto.html">Contáctanos</a>
+    <p>© <span id="y"></span> Future Value Group — Diseño • Finanzas • Data</p>
   </div>
 </footer>
+
+<script src="/js/main.js"></script>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body></html>
+</body>
+</html>
