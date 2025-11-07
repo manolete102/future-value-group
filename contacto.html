@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Future Value Group</title>
+<link rel="icon" href="/assets/logo.jpeg"><link rel="stylesheet" href="/css/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head><body>
+<header><div class="wrap"><nav>
+  <a class="logo" href="/"><img src="/assets/logo.jpeg" alt="FV"/><strong style="color:#fff">FV Group</strong></a>
+  <div class="spacer"></div><a href="/servicios.html">Servicios</a><a href="/casos.html">Casos</a><a href="/nosotros.html">Nosotros</a><a class="cta" href="/contacto.html">Contacto</a>
+</nav></div></header>
+
+<section class="hero"><div class="wrap"><h1>Contacto</h1><p class="sub">Contanos de tu proyecto y te respondemos en 24 h hábiles.</p></div></section>
+
+<section class="section"><div class="wrap">
+  <div class="card" style="max-width:680px;margin:0 auto">
+    <form action="https://formspree.io/f/mblpnoeo" method="POST" class="grid" style="gap:12px">
+      <label>Nombre<br><input name="name" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff"></label>
+      <label>Email<br><input type="email" name="email" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff"></label>
+      <label>Proyecto / Mensaje<br><textarea name="message" rows="6" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff"></textarea></label>
+      <input type="hidden" name="_subject" value="Nuevo contacto — Future Value Group">
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+    <p style="color:var(--muted);margin-top:10px">También por WhatsApp o agenda una reunión — sumamos los links cuando nos pases los datos.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© <span id="y"></span> Future Value Group</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body></html>
