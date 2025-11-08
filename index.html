@@ -141,6 +141,7 @@
             justify-content: center;
             margin-bottom: 16px;
             border: 1px solid var(--line);
+            font-size: 24px;
         }
 
         /* Proceso / Steps */
@@ -191,6 +192,26 @@
         button:hover, .btn:hover {
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(180, 152, 92, 0.3);
+        }
+
+        /* Mensaje de confirmación */
+        .form-message {
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 16px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background: rgba(46, 125, 50, 0.2);
+            border: 1px solid rgba(46, 125, 50, 0.5);
+            color: #81c995;
+        }
+        
+        .form-message.error {
+            background: rgba(211, 47, 47, 0.2);
+            border: 1px solid rgba(211, 47, 47, 0.5);
+            color: #e57373;
         }
 
         /* ================================
@@ -244,6 +265,11 @@
             section {
                 padding: 40px 0;
             }
+            
+            #contacto > .wrap > div {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
         }
     </style>
 </head>
@@ -253,9 +279,7 @@
             <nav class="navbar">
                 <a href="#" class="logo">
                     <!-- Logo FV -->
-                    <div class="logo-img" style="background: var(--brand); display: flex; align-items: center; justify-content: center; color: #111; font-weight: 800; font-size: 18px;">
-                        FV
-                    </div>
+                    <img src="assets/logo.jpeg" alt="Future Value" class="logo-img">
                     <span>Future Value</span>
                 </a>
                 <div class="spacer"></div>
@@ -377,18 +401,18 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
                     <div>
                         <h3 style="margin-bottom: 24px;">Solicita una Consulta Gratuita</h3>
-                        <form>
+                        <form id="contactForm">
                             <div>
-                                <label for="nombre">Nombre Completo</label>
+                                <label for="nombre">Nombre Completo *</label>
                                 <input type="text" id="nombre" placeholder="Tu nombre completo" required>
                             </div>
                             <div>
-                                <label for="email">Email</label>
+                                <label for="email">Email *</label>
                                 <input type="email" id="email" placeholder="tu@email.com" required>
                             </div>
                             <div>
                                 <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" placeholder="+34 123 456 789">
+                                <input type="tel" id="telefono" placeholder="+52 81 2023 0306">
                             </div>
                             <div>
                                 <label for="servicio">Servicio de Interés</label>
@@ -401,10 +425,11 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="mensaje">Mensaje</label>
-                                <textarea id="mensaje" rows="5" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                                <label for="mensaje">Mensaje *</label>
+                                <textarea id="mensaje" rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
                             </div>
                             <button type="submit">Enviar Mensaje</button>
+                            <div id="formMessage" class="form-message"></div>
                         </form>
                     </div>
                     <div>
@@ -412,19 +437,15 @@
                         <div style="display: flex; flex-direction: column; gap: 20px;">
                             <div>
                                 <h4 style="margin: 0 0 8px 0;">📧 Email</h4>
-                                <p style="margin: 0;">info@futurevalue.com</p>
+                                <p style="margin: 0;">manuel@futurevalue.group</p>
                             </div>
                             <div>
                                 <h4 style="margin: 0 0 8px 0;">📞 Teléfono</h4>
-                                <p style="margin: 0;">+34 912 345 678</p>
+                                <p style="margin: 0;">81 2023 0306</p>
                             </div>
                             <div>
                                 <h4 style="margin: 0 0 8px 0;">📍 Dirección</h4>
-                                <p style="margin: 0;">Madrid, España</p>
-                            </div>
-                            <div>
-                                <h4 style="margin: 0 0 12px 0;">🕒 Horario</h4>
-                                <p style="margin: 0;">Lunes a Viernes: 9:00 - 18:00</p>
+                                <p style="margin: 0;">Monterrey, México</p>
                             </div>
                         </div>
                         
@@ -447,9 +468,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div style="display: flex; align-items: center; gap: 12px;">
-                        <div class="logo-img" style="background: var(--brand); display: flex; align-items: center; justify-content: center; color: #111; font-weight: 800; font-size: 16px;">
-                            FV
-                        </div>
+                        <img src="assets/logo.jpeg" alt="Future Value" class="logo-img" style="height: 40px;">
                         <span style="font-weight: 800; font-size: 1.2rem;">Future Value</span>
                     </div>
                     <p>Consultoría especializada en servicios digitales y financieros para impulsar tu crecimiento empresarial.</p>
@@ -500,6 +519,47 @@
                     });
                 }
             });
+        });
+
+        // Manejo del formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                telefono: document.getElementById('telefono').value,
+                servicio: document.getElementById('servicio').value,
+                mensaje: document.getElementById('mensaje').value
+            };
+            
+            const messageDiv = document.getElementById('formMessage');
+            
+            // Simulación de envío (en producción necesitarías un backend)
+            setTimeout(() => {
+                // Aquí normalmente enviarías los datos a tu servidor
+                // Para este ejemplo, simulamos un envío exitoso
+                
+                // Crear el contenido del correo
+                const mailtoLink = `mailto:manuel@futurevalue.group?subject=Nueva consulta de ${encodeURIComponent(formData.nombre)}&body=Nombre: ${encodeURIComponent(formData.nombre)}%0AEmail: ${encodeURIComponent(formData.email)}%0ATeléfono: ${encodeURIComponent(formData.telefono)}%0AServicio de interés: ${encodeURIComponent(formData.servicio)}%0A%0AMensaje:%0A${encodeURIComponent(formData.mensaje)}`;
+                
+                // Abrir el cliente de correo
+                window.location.href = mailtoLink;
+                
+                // Mostrar mensaje de éxito
+                messageDiv.textContent = '¡Mensaje enviado! Redirigiendo a tu cliente de correo...';
+                messageDiv.className = 'form-message success';
+                messageDiv.style.display = 'block';
+                
+                // Limpiar el formulario
+                document.getElementById('contactForm').reset();
+                
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+                
+            }, 1000);
         });
     </script>
 </body>
