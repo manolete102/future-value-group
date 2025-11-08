@@ -2,210 +2,161 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Future Value Group — Diseño Web, Finanzas & Data</title>
-  <meta name="description" content="Creamos experiencias digitales y modelos de negocio que impulsan ventas y ROI. Diseño web, branding, marketing, finanzas y analítica.">
-  <link rel="icon" href="/assets/logo.jpeg">
-  <!-- Tipografías sobrias/modernas -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Future Value Group</title>
+  <meta name="description" content="Finanzas, Web y Datos. Resultados medibles en semanas." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230e1a2b'/%3E%3Ctext x='22' y='68' font-size='52' font-family='Georgia,serif' fill='%23fff'%3EFV%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
+  <style>
+    :root{
+      --bg:#0e1a2b;--ink:#f5f7fa;--muted:#b8c2cf;--brand:#b4985c;--wrap:1180px;--line:rgba(255,255,255,.08);
+    }
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:10;background:rgba(14,26,43,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav .row{display:flex;align-items:center;gap:16px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{height:22px;width:auto;border-radius:6px}
+    .brand span{font-weight:800;letter-spacing:.2px}
+    .nav a{color:var(--ink);text-decoration:none;padding:8px 10px;border-radius:9px}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+    .spacer{flex:1}
+    .cta{background:linear-gradient(90deg,var(--brand),#e5d2a3);color:#111;font-weight:800;border:none;padding:9px 14px;border-radius:10px}
+    /* HERO compacto */
+    .hero{padding:36px 0 8px;border-bottom:1px solid var(--line)}
+    .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:20px}
+    .kicker{color:var(--brand);font-weight:800;letter-spacing:.3px;margin-bottom:6px}
+    h1{font-size:clamp(28px,4vw,40px);line-height:1.12;margin:6px 0 8px}
+    .hero p{color:var(--muted);margin:0}
+    .hero .quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .chip{border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted)}
+    /* BLOQUES HORIZONTALES */
+    .bar{padding:18px 0;border-bottom:1px solid var(--line)}
+    .bar h2{font-size:18px;margin:0 0 10px;color:var(--muted);font-weight:600;letter-spacing:.2px}
+    .row-h{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+    .card{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px;min-height:110px}
+    .card h3{font-size:16px;margin:0}
+    .card p{color:var(--muted);margin:0;font-size:14px}
+    /* Servicios: 6 tarjetas horizontales (2 filas en mobile) */
+    .srv{grid-column:span 2}
+    /* Casos: 3 anchas */
+    .case{grid-column:span 4}
+    .case small{color:var(--muted)}
+    /* CONTACT strip */
+    .contact{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .contact p{color:var(--muted);margin:0}
+    /* FOOTER */
+    footer{padding:18px 0;color:var(--muted)}
+    /* Responsive */
+    @media (max-width:980px){
+      .hero .grid{grid-template-columns:1fr}
+      .srv{grid-column:span 6}
+      .case{grid-column:span 12}
+      .contact{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
 <body>
-
-<!-- NAV -->
-<header class="site-header">
-  <div class="wrap nav">
-    <a class="brand" href="/">
-      <img src="/assets/logo.jpeg" alt="Future Value Group" />
-      <span>Future Value Group</span>
-    </a>
-    <nav class="menu">
-      <a href="#inicio">Inicio</a>
-      <a href="#branding">Branding</a>
-      <a href="#web">Desarrollo Web</a>
-      <a href="#portafolio">Portafolio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto" class="cta">Cotiza tu proyecto</a>
-    </nav>
-    <button class="hamb" aria-label="Menú" onclick="toggleMenu()">☰</button>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="wrap row">
+      <a class="brand" href="/">
+        <img src="/assets/logo.jpeg" alt="FV" />
+        <span>Future Value Group</span>
+      </a>
+      <div class="spacer"></div>
+      <nav>
+        <a href="/servicios.html">Servicios</a>
+        <a href="/nosotros.html">Nosotros</a>
+        <a href="/contacto.html" class="cta">Contacto</a>
+      </nav>
+    </div>
   </div>
-  <div class="divider"></div>
-</header>
 
-<main id="inicio">
+  <!-- HERO compacto -->
+  <header class="hero">
+    <div class="wrap grid">
+      <div>
+        <div class="kicker">Resultados en semanas, no meses</div>
+        <h1>Finanzas + Web + Datos, sin vueltas.</h1>
+        <p>Armas tu objetivo, nosotros lo ejecutamos con foco en ROI. Menos discurso, más métricas.</p>
+        <div class="quick">
+          <span class="chip">Landing lista</span>
+          <span class="chip">CRO + Ads</span>
+          <span class="chip">Modelos financieros</span>
+          <span class="chip">BI en días</span>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="min-height:auto">
+          <h3>Qué hacemos en 3 líneas</h3>
+          <p>• Sitios y landings rápidas que convierten.</p>
+          <p>• Campañas y analítica accionable.</p>
+          <p>• Modelos y tableros para decidir hoy.</p>
+          <a class="cta" style="margin-top:8px;display:inline-block" href="/contacto.html">Pedir propuesta</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <!-- SECCIÓN / Título de la página (breadcrumb simple) -->
-  <section class="page-lead">
+  <!-- SERVICIOS (fila ancha horizontal) -->
+  <section class="bar">
     <div class="wrap">
-      <span class="overline">DESARROLLO WEB</span>
+      <h2>Servicios</h2>
+      <div class="row-h">
+        <article class="card srv"><h3>Landing / Web</h3><p>Rápidas, medibles y escalables.</p></article>
+        <article class="card srv"><h3>E-commerce</h3><p>Checkout ágil, SEO y performance.</p></article>
+        <article class="card srv"><h3>SEO + Ads</h3><p>Captación con CPA controlado.</p></article>
+        <article class="card srv"><h3>CRO</h3><p>Experimentos que suben la tasa.</p></article>
+        <article class="card srv"><h3>BI & Dashboards</h3><p>Power BI / Looker en días.</p></article>
+        <article class="card srv"><h3>Finanzas FP&A</h3><p>Proyecciones, pricing y ROI.</p></article>
+      </div>
     </div>
   </section>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- CASOS (fila ancha) -->
+  <section class="bar">
     <div class="wrap">
-      <h1>No solo diseñamos páginas web:<br><span class="thin">Creamos experiencias digitales que impulsan tu negocio.</span></h1>
-      <p class="sub">Transformamos tu negocio con diseño y desarrollo profesional, performance, SEO y analítica.</p>
-    </div>
-  </section>
-
-  <!-- OFRECEMOS -->
-  <section class="offers">
-    <div class="wrap">
-      <h2 class="sr-only">Ofrecemos</h2>
-      <div class="cols3">
-        <article>
-          <div class="dot"></div>
-          <h3>Visibilidad</h3>
-          <p>SEO técnico y de contenidos para que te encuentren clientes que aún no te conocen.</p>
+      <h2>Casos</h2>
+      <div class="row-h">
+        <article class="card case">
+          <h3>Retail • +38% conversiones</h3>
+          <p>Rediseño técnico + SEO.</p>
+          <small>Stack: HTML / GA4 / Meta</small>
         </article>
-        <article>
-          <div class="dot"></div>
-          <h3>Aumento de ventas</h3>
-          <p>Diseño orientado a conversión (CRO), velocidad, funnels y analítica accionable.</p>
+        <article class="card case">
+          <h3>Manufactura • BI en piso</h3>
+          <p>OEE y costos en tiempo real.</p>
+          <small>Stack: ETL / Power BI</small>
         </article>
-        <article>
-          <div class="dot"></div>
-          <h3>Retorno de inversión</h3>
-          <p>Ruta clara: research → UX/UI → desarrollo → lanzamiento → optimización continua.</p>
+        <article class="card case">
+          <h3>Servicios • CPA −27%</h3>
+          <p>Funnels + optimización creativa.</p>
+          <small>Stack: Google Ads / CRO</small>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS / PILARES -->
-  <section id="web" class="services">
-    <div class="wrap">
-      <div class="grid">
-        <div class="left">
-          <span class="index">01</span>
-          <h2>Diseño y desarrollo de sitios web</h2>
-          <ul class="bullets">
-            <li>UX/UI con foco en usuario y negocio</li>
-            <li>Código moderno, accesible y veloz (Core Web Vitals)</li>
-            <li>SEO técnico y on-page desde el día 1</li>
-          </ul>
-        </div>
-        <div class="right">
-          <span class="blue-dot"></span>
-          <h3 class="pillars-title">Los pilares de un sitio web</h3>
-
-          <button class="accordion">UX/UI orientado a resultados</button>
-          <div class="panel"><p>Arquitectura, wireframes, diseño visual y micro-interacciones medibles.</p></div>
-
-          <button class="accordion">Contenido & Copywriting</button>
-          <div class="panel"><p>Mensajes claros, propuesta de valor y CTAs que convierten.</p></div>
-
-          <button class="accordion">Desarrollo front-end</button>
-          <div class="panel"><p>HTML/CSS/JS limpio, accesibilidad y performance de clase A.</p></div>
-
-          <button class="accordion">SEO técnico</button>
-          <div class="panel"><p>Etiquetas, estructura, velocidad, sitemaps y schema listos para Google.</p></div>
-        </div>
-      </div>
-
-      <div class="divider large"></div>
-
-      <div class="grid">
-        <div class="left">
-          <span class="index">02</span>
-          <h2>Mantenimiento y evolución</h2>
-          <p>Actualizaciones, seguridad, contenido y mejoras de conversión de forma continua.</p>
-        </div>
-        <div class="right">
-          <ul class="bullets">
-            <li>Monitoreo de uptime y performance</li>
-            <li>Iteraciones de CRO, A/B testing</li>
-            <li>Roadmap de mejoras trimestral</li>
-          </ul>
-        </div>
+  <!-- CONTACT strip -->
+  <section class="bar">
+    <div class="wrap contact">
+      <p>¿Querés algo así de concreto? Enviá tu objetivo y te devolvemos un plan simple.</p>
+      <div>
+        <a class="cta" href="/contacto.html">Hablemos</a>
       </div>
     </div>
   </section>
 
-  <!-- METODOLOGÍA / CARRUSEL -->
-  <section class="process">
-    <div class="wrap">
-      <h2>Nuestro proceso orientado a resultados</h2>
-      <p class="sub">Comunicación clara, fechas cerradas y entregables medibles.</p>
+  <footer class="wrap" style="display:flex;justify-content:space-between;gap:10px">
+    <small>© <span id="year"></span> Future Value Group</small>
+    <small style="color:var(--muted)">Navy + dorado, sin ruido. Hecho para vender.</small>
+  </footer>
 
-      <div class="carousel" id="steps">
-        <button class="nav prev" aria-label="Anterior" onclick="slide(-1)">←</button>
-        <div class="track">
-          <article class="card">
-            <span class="step">01 — 07</span>
-            <h3>Analizamos</h3>
-            <p>Objetivos, alcance, audiencia y benchmarks. Definimos KPIs y riesgos.</p>
-          </article>
-          <article class="card">
-            <span class="step">02 — 07</span>
-            <h3>Planeamos</h3>
-            <p>Arquitectura, backlog, sprints y diseño de medición (GA4/Pixel).</p>
-          </article>
-          <article class="card">
-            <span class="step">03 — 07</span>
-            <h3>Diseñamos</h3>
-            <p>Wireframes, UI, componentes y prototipo navegable.</p>
-          </article>
-          <article class="card">
-            <span class="step">04 — 07</span>
-            <h3>Construimos</h3>
-            <p>Front-end limpio, accesible y veloz. Integraciones y QA técnico.</p>
-          </article>
-          <article class="card">
-            <span class="step">05 — 07</span>
-            <h3>Probamos</h3>
-            <p>Pruebas funcionales, responsive, performance y SEO.</p>
-          </article>
-          <article class="card">
-            <span class="step">06 — 07</span>
-            <h3>Lanzamos</h3>
-            <p>Despliegue, SSL/HTTPS, dominios y checklist final.</p>
-          </article>
-          <article class="card">
-            <span class="step">07 — 07</span>
-            <h3>Medimos & Mejoramos</h3>
-            <p>Dashboards, insights y experimentación continua.</p>
-          </article>
-        </div>
-        <button class="nav next" aria-label="Siguiente" onclick="slide(1)">→</button>
-      </div>
-
-      <div class="cta-row">
-        <a class="btn" href="#contacto">Ver flujo completo</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="contact">
-    <div class="wrap">
-      <div class="grid2">
-        <div>
-          <h2>¿Listos para empezar?</h2>
-          <p class="sub">Contanos tu proyecto y te devolvemos una propuesta en 24 h hábiles.</p>
-        </div>
-        <form class="card form" action="https://formspree.io/f/mblpnoeo" method="POST">
-          <label>Nombre<input name="name" required></label>
-          <label>Email<input type="email" name="email" required></label>
-          <label>Proyecto / Mensaje<textarea rows="5" name="message" required></textarea></label>
-          <input type="hidden" name="_subject" value="Nuevo contacto — Future Value Group">
-          <button class="btn" type="submit">Enviar</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="divider"></div>
-  <div class="wrap">
-    <p>© <span id="y"></span> Future Value Group — Diseño • Finanzas • Data</p>
-  </div>
-</footer>
-
-<script src="/js/main.js"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
