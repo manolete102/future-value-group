@@ -1,162 +1,506 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Future Value Group</title>
-  <meta name="description" content="Finanzas, Web y Datos. Resultados medibles en semanas." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230e1a2b'/%3E%3Ctext x='22' y='68' font-size='52' font-family='Georgia,serif' fill='%23fff'%3EFV%3C/text%3E%3C/svg%3E">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
-  <style>
-    :root{
-      --bg:#0e1a2b;--ink:#f5f7fa;--muted:#b8c2cf;--brand:#b4985c;--wrap:1180px;--line:rgba(255,255,255,.08);
-    }
-    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Arial}
-    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
-    /* NAV */
-    .nav{position:sticky;top:0;z-index:10;background:rgba(14,26,43,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    .nav .row{display:flex;align-items:center;gap:16px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand img{height:22px;width:auto;border-radius:6px}
-    .brand span{font-weight:800;letter-spacing:.2px}
-    .nav a{color:var(--ink);text-decoration:none;padding:8px 10px;border-radius:9px}
-    .nav a:hover{background:rgba(255,255,255,.06)}
-    .spacer{flex:1}
-    .cta{background:linear-gradient(90deg,var(--brand),#e5d2a3);color:#111;font-weight:800;border:none;padding:9px 14px;border-radius:10px}
-    /* HERO compacto */
-    .hero{padding:36px 0 8px;border-bottom:1px solid var(--line)}
-    .hero .grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:20px}
-    .kicker{color:var(--brand);font-weight:800;letter-spacing:.3px;margin-bottom:6px}
-    h1{font-size:clamp(28px,4vw,40px);line-height:1.12;margin:6px 0 8px}
-    .hero p{color:var(--muted);margin:0}
-    .hero .quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-    .chip{border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted)}
-    /* BLOQUES HORIZONTALES */
-    .bar{padding:18px 0;border-bottom:1px solid var(--line)}
-    .bar h2{font-size:18px;margin:0 0 10px;color:var(--muted);font-weight:600;letter-spacing:.2px}
-    .row-h{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
-    .card{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px;min-height:110px}
-    .card h3{font-size:16px;margin:0}
-    .card p{color:var(--muted);margin:0;font-size:14px}
-    /* Servicios: 6 tarjetas horizontales (2 filas en mobile) */
-    .srv{grid-column:span 2}
-    /* Casos: 3 anchas */
-    .case{grid-column:span 4}
-    .case small{color:var(--muted)}
-    /* CONTACT strip */
-    .contact{display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .contact p{color:var(--muted);margin:0}
-    /* FOOTER */
-    footer{padding:18px 0;color:var(--muted)}
-    /* Responsive */
-    @media (max-width:980px){
-      .hero .grid{grid-template-columns:1fr}
-      .srv{grid-column:span 6}
-      .case{grid-column:span 12}
-      .contact{flex-direction:column;align-items:flex-start}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Value - Consultoría de Servicios Digitales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root{
+          /* Colores (del logo) */
+          --bg:#0e1a2b;           /* navy profundo */
+          --surface:#0f1524;      /* panel oscuro */
+          --card:#0f1726;         /* tarjeta/gradiente */
+          --ink:#f5f7fa;          /* texto principal */
+          --muted:#b8c2cf;        /* texto secundario */
+          --brand:#b4985c;        /* dorado */
+          --brand-2:#e5d2a3;      /* dorado claro */
+          --line:rgba(255,255,255,.10);
+
+          /* Layout */
+          --wrap:1120px;
+          --radius:16px;
+          --shadow:0 8px 24px rgba(0,0,0,.24);
+        }
+
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        html,body{
+          margin:0;
+          background:var(--bg);
+          color:var(--ink);
+          font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+          line-height:1.6;
+          -webkit-font-smoothing:antialiased;
+          -moz-osx-font-smoothing:grayscale;
+        }
+
+        img{max-width:100%;height:auto;display:block}
+        a{text-decoration:none;color:var(--brand)}
+        a:hover{filter:brightness(1.12)}
+        p{margin:0 0 12px}
+
+        .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+
+        /* ================================
+           Header / Nav
+           ================================ */
+        header.site-header{
+          position:sticky;top:0;z-index:50;
+          backdrop-filter:saturate(1.1) blur(8px);
+          background:rgba(14,26,43,.70);
+          border-bottom:1px solid var(--line);
+          transition:box-shadow .2s ease, background .2s ease;
+        }
+        header.site-header.is-scrolled{box-shadow:var(--shadow);background:rgba(14,26,43,.82)}
+
+        .navbar{display:flex;align-items:center;gap:16px;min-height:64px}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);}
+        .logo-img {
+            height: 40px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .spacer{flex:1}
+
+        .nav-links{display:flex;gap:8px;align-items:center}
+        .nav-links a{
+          color:var(--ink);
+          padding:8px 12px;
+          border-radius:12px;
+          border:1px solid transparent;
+          transition: all 0.2s ease;
+        }
+        .nav-links a:hover{border-color:var(--line); background: rgba(255,255,255,0.05);}
+        .nav-links a.active{border-bottom:2px solid var(--brand)}
+
+        .btn-cta{
+          background:linear-gradient(90deg,var(--brand),var(--brand-2));
+          color:#111;font-weight:800;border:none;
+          padding:10px 14px;border-radius:12px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-cta:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(180, 152, 92, 0.3);
+        }
+
+        /* ================================
+           Hero
+           ================================ */
+        .hero{padding:72px 0 28px}
+        .hero h1{
+          font-family:'Playfair Display',Georgia,Times,serif;
+          font-weight:700;
+          font-size:clamp(28px,5vw,56px);
+          line-height:1.12;margin:10px 0 12px;
+        }
+        .hero p{color:var(--muted);max-width:760px; font-size: 1.1rem;}
+        .gold-line{height:2px;background:var(--brand);width:120px;margin:16px 0;border-radius:2px}
+
+        .kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+        .kpi{padding:10px 12px;border:1px dashed var(--line);border-radius:12px;color:var(--muted); transition: all 0.3s ease;}
+        .kpi:hover {border-color: var(--brand); color: var(--brand-2);}
+
+        /* ================================
+           Sections / Cards
+           ================================ */
+        section{padding:60px 0}
+        .section-title{font-size:32px;margin:0 0 24px;font-weight:800; text-align: center;}
+
+        .grid{
+          display:grid;gap:24px;
+          grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        }
+
+        .card{
+          background:linear-gradient(180deg,var(--card),#0c1422);
+          border:1px solid var(--line);
+          border-radius:var(--radius);
+          padding:24px;transition:transform .15s ease,border-color .15s ease;
+          height: 100%;
+        }
+        .card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.14); box-shadow: var(--shadow);}
+        .card h3{
+          font-family:'Playfair Display',Georgia,Times,serif;margin:.2rem 0 .3rem;
+          font-size: 1.4rem;
+        }
+        .card p{color:var(--muted); font-size: 1rem;}
+
+        /* Iconos de servicios */
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--surface);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            border: 1px solid var(--line);
+        }
+
+        /* Proceso / Steps */
+        .steps{
+          display:grid;gap:24px;
+          grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+        }
+        .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px; transition: all 0.3s ease;}
+        .step:hover {border-color: var(--brand); transform: translateY(-3px);}
+        .badge{display:inline-block;background:var(--brand);color:#111;padding:6px 12px;border-radius:999px;font-weight:800;font-size:14px; margin-bottom: 12px;}
+
+        /* Casos */
+        .cases{
+          display:grid;gap:24px;
+          grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+        }
+        .case{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px; transition: all 0.3s ease;}
+        .case:hover {border-color: var(--brand); transform: translateY(-3px);}
+        .case small{color:var(--muted)}
+
+        /* ================================
+           Formularios
+           ================================ */
+        form{display:grid;gap:16px}
+        label{font-weight:600}
+        input,textarea,select{
+          background:var(--surface);
+          border:1px solid var(--line);
+          color:var(--ink);
+          padding:12px 16px;border-radius:12px;
+          outline:none;
+          transition: border-color 0.3s ease;
+          font-family: inherit;
+          font-size: 1rem;
+        }
+        input:focus,textarea:focus,select:focus {
+          border-color: var(--brand);
+        }
+        input::placeholder,textarea::placeholder{color:#99a7b6}
+        button, .btn{
+          cursor:pointer;border:none;
+          padding:14px 20px;border-radius:12px;
+          background:linear-gradient(90deg,var(--brand),var(--brand-2));
+          color:#111;font-weight:800;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          font-size: 1rem;
+        }
+        button:hover, .btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(180, 152, 92, 0.3);
+        }
+
+        /* ================================
+           Footer
+           ================================ */
+        footer.site-footer{
+          padding:40px 0;margin-top:24px;
+          color:var(--muted);border-top:1px solid var(--line)
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .hero {
+                padding: 40px 0 20px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="wrap row">
-      <a class="brand" href="/">
-        <img src="/assets/logo.jpeg" alt="FV" />
-        <span>Future Value Group</span>
-      </a>
-      <div class="spacer"></div>
-      <nav>
-        <a href="/servicios.html">Servicios</a>
-        <a href="/nosotros.html">Nosotros</a>
-        <a href="/contacto.html" class="cta">Contacto</a>
-      </nav>
-    </div>
-  </div>
-
-  <!-- HERO compacto -->
-  <header class="hero">
-    <div class="wrap grid">
-      <div>
-        <div class="kicker">Resultados en semanas, no meses</div>
-        <h1>Finanzas + Web + Datos, sin vueltas.</h1>
-        <p>Armas tu objetivo, nosotros lo ejecutamos con foco en ROI. Menos discurso, más métricas.</p>
-        <div class="quick">
-          <span class="chip">Landing lista</span>
-          <span class="chip">CRO + Ads</span>
-          <span class="chip">Modelos financieros</span>
-          <span class="chip">BI en días</span>
+    <header class="site-header">
+        <div class="wrap">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <!-- Logo FV -->
+                    <div class="logo-img" style="background: var(--brand); display: flex; align-items: center; justify-content: center; color: #111; font-weight: 800; font-size: 18px;">
+                        FV
+                    </div>
+                    <span>Future Value</span>
+                </a>
+                <div class="spacer"></div>
+                <div class="nav-links">
+                    <a href="#" class="active">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#proceso">Proceso</a>
+                    <a href="#casos">Casos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <a href="#contacto" class="btn-cta">Consulta Gratuita</a>
+            </nav>
         </div>
-      </div>
-      <div>
-        <div class="card" style="min-height:auto">
-          <h3>Qué hacemos en 3 líneas</h3>
-          <p>• Sitios y landings rápidas que convierten.</p>
-          <p>• Campañas y analítica accionable.</p>
-          <p>• Modelos y tableros para decidir hoy.</p>
-          <a class="cta" style="margin-top:8px;display:inline-block" href="/contacto.html">Pedir propuesta</a>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="wrap">
+                <h1>Consultoría de Servicios Digitales y Financieros</h1>
+                <div class="gold-line"></div>
+                <p>Soluciones integrales para transformar tu negocio. Combinamos expertise técnico y financiero para impulsar tu crecimiento digital.</p>
+                <a href="#servicios" class="btn-cta" style="display: inline-block; margin-top: 20px;">Conoce Nuestros Servicios</a>
+                
+                <div class="kpis">
+                    <div class="kpi">+15 años de experiencia</div>
+                    <div class="kpi">+200 proyectos exitosos</div>
+                    <div class="kpi">98% de satisfacción</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section id="servicios" style="background: var(--surface);">
+            <div class="wrap">
+                <h2 class="section-title">Nuestros Servicios Especializados</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="service-icon">🖥️</div>
+                        <h3>Diseño Web</h3>
+                        <p>Creación de experiencias digitales excepcionales con UX/UI design, desarrollo frontend y optimización SEO para maximizar tu presencia online.</p>
+                    </div>
+                    <div class="card">
+                        <div class="service-icon">⚙️</div>
+                        <h3>Mantenimiento Web</h3>
+                        <p>Actualizaciones de seguridad, copias de respaldo, monitoreo 24/7 y soporte técnico continuo para garantizar el rendimiento óptimo.</p>
+                    </div>
+                    <div class="card">
+                        <div class="service-icon">🗄️</div>
+                        <h3>Bases de Datos</h3>
+                        <p>Optimización, gestión y administración de bases de datos para asegurar escalabilidad, seguridad y máximo rendimiento de tus datos.</p>
+                    </div>
+                    <div class="card">
+                        <div class="service-icon">💰</div>
+                        <h3>Finanzas</h3>
+                        <p>Análisis financiero estratégico, planificación de inversiones y optimización de recursos para maximizar tu rentabilidad y crecimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso Section -->
+        <section id="proceso">
+            <div class="wrap">
+                <h2 class="section-title">Nuestro Proceso de Trabajo</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="badge">01</span>
+                        <h3>Descubrimiento</h3>
+                        <p>Análisis detallado de necesidades, objetivos y requisitos técnicos para comprender completamente tu proyecto.</p>
+                    </div>
+                    <div class="step">
+                        <span class="badge">02</span>
+                        <h3>Planificación</h3>
+                        <p>Desarrollo de estrategia personalizada, cronograma y definición de métricas de éxito para tu proyecto.</p>
+                    </div>
+                    <div class="step">
+                        <span class="badge">03</span>
+                        <h3>Ejecución</h3>
+                        <p>Implementación con metodologías ágiles, comunicación constante y entregables regulares para mantenerte informado.</p>
+                    </div>
+                    <div class="step">
+                        <span class="badge">04</span>
+                        <h3>Entrega y Soporte</h3>
+                        <p>Implementación final, capacitación y seguimiento continuo para garantizar el éxito a largo plazo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos de Éxito -->
+        <section id="casos" style="background: var(--surface);">
+            <div class="wrap">
+                <h2 class="section-title">Casos de Éxito</h2>
+                <div class="cases">
+                    <div class="case">
+                        <h3>Empresa FinTech</h3>
+                        <p>Implementación de sistema de bases de datos que redujo tiempos de procesamiento en un 65%.</p>
+                        <small>+65% eficiencia</small>
+                    </div>
+                    <div class="case">
+                        <h3>E-commerce Retail</h3>
+                        <p>Rediseño completo de plataforma que incrementó la tasa de conversión en un 40%.</p>
+                        <small>+40% conversión</small>
+                    </div>
+                    <div class="case">
+                        <h3>Startup SaaS</h3>
+                        <p>Optimización financiera que mejoró el margen de beneficio en un 28% en 6 meses.</p>
+                        <small>+28% rentabilidad</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto">
+            <div class="wrap">
+                <h2 class="section-title">Hablemos de Tu Proyecto</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+                    <div>
+                        <h3 style="margin-bottom: 24px;">Solicita una Consulta Gratuita</h3>
+                        <form>
+                            <div>
+                                <label for="nombre">Nombre Completo</label>
+                                <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="tu@email.com" required>
+                            </div>
+                            <div>
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" placeholder="+34 123 456 789">
+                            </div>
+                            <div>
+                                <label for="servicio">Servicio de Interés</label>
+                                <select id="servicio">
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="diseno">Diseño Web</option>
+                                    <option value="mantenimiento">Mantenimiento Web</option>
+                                    <option value="bases-datos">Bases de Datos</option>
+                                    <option value="finanzas">Finanzas</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" rows="5" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                            </div>
+                            <button type="submit">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 24px;">Información de Contacto</h3>
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <div>
+                                <h4 style="margin: 0 0 8px 0;">📧 Email</h4>
+                                <p style="margin: 0;">info@futurevalue.com</p>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 8px 0;">📞 Teléfono</h4>
+                                <p style="margin: 0;">+34 912 345 678</p>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 8px 0;">📍 Dirección</h4>
+                                <p style="margin: 0;">Madrid, España</p>
+                            </div>
+                            <div>
+                                <h4 style="margin: 0 0 12px 0;">🕒 Horario</h4>
+                                <p style="margin: 0;">Lunes a Viernes: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 40px;">
+                            <h4 style="margin-bottom: 16px;">Síguenos</h4>
+                            <div style="display: flex; gap: 12px;">
+                                <a href="#" style="display: inline-block; padding: 10px; background: var(--surface); border-radius: 8px;">LinkedIn</a>
+                                <a href="#" style="display: inline-block; padding: 10px; background: var(--surface); border-radius: 8px;">Twitter</a>
+                                <a href="#" style="display: inline-block; padding: 10px; background: var(--surface); border-radius: 8px;">Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div class="logo-img" style="background: var(--brand); display: flex; align-items: center; justify-content: center; color: #111; font-weight: 800; font-size: 16px;">
+                            FV
+                        </div>
+                        <span style="font-weight: 800; font-size: 1.2rem;">Future Value</span>
+                    </div>
+                    <p>Consultoría especializada en servicios digitales y financieros para impulsar tu crecimiento empresarial.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#proceso">Proceso</a>
+                    <a href="#casos">Casos de Éxito</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Future Value Consultoría. Todos los derechos reservados.</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </header>
+    </footer>
 
-  <!-- SERVICIOS (fila ancha horizontal) -->
-  <section class="bar">
-    <div class="wrap">
-      <h2>Servicios</h2>
-      <div class="row-h">
-        <article class="card srv"><h3>Landing / Web</h3><p>Rápidas, medibles y escalables.</p></article>
-        <article class="card srv"><h3>E-commerce</h3><p>Checkout ágil, SEO y performance.</p></article>
-        <article class="card srv"><h3>SEO + Ads</h3><p>Captación con CPA controlado.</p></article>
-        <article class="card srv"><h3>CRO</h3><p>Experimentos que suben la tasa.</p></article>
-        <article class="card srv"><h3>BI & Dashboards</h3><p>Power BI / Looker en días.</p></article>
-        <article class="card srv"><h3>Finanzas FP&A</h3><p>Proyecciones, pricing y ROI.</p></article>
-      </div>
-    </div>
-  </section>
+    <script>
+        // Efecto de scroll en el header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.site-header');
+            if (window.scrollY > 10) {
+                header.classList.add('is-scrolled');
+            } else {
+                header.classList.remove('is-scrolled');
+            }
+        });
 
-  <!-- CASOS (fila ancha) -->
-  <section class="bar">
-    <div class="wrap">
-      <h2>Casos</h2>
-      <div class="row-h">
-        <article class="card case">
-          <h3>Retail • +38% conversiones</h3>
-          <p>Rediseño técnico + SEO.</p>
-          <small>Stack: HTML / GA4 / Meta</small>
-        </article>
-        <article class="card case">
-          <h3>Manufactura • BI en piso</h3>
-          <p>OEE y costos en tiempo real.</p>
-          <small>Stack: ETL / Power BI</small>
-        </article>
-        <article class="card case">
-          <h3>Servicios • CPA −27%</h3>
-          <p>Funnels + optimización creativa.</p>
-          <small>Stack: Google Ads / CRO</small>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT strip -->
-  <section class="bar">
-    <div class="wrap contact">
-      <p>¿Querés algo así de concreto? Enviá tu objetivo y te devolvemos un plan simple.</p>
-      <div>
-        <a class="cta" href="/contacto.html">Hablemos</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="wrap" style="display:flex;justify-content:space-between;gap:10px">
-    <small>© <span id="year"></span> Future Value Group</small>
-    <small style="color:var(--muted)">Navy + dorado, sin ruido. Hecho para vender.</small>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
